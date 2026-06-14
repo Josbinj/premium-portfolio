@@ -1,0 +1,127 @@
+{
+  "undefined": {
+    "showTestimonials": false,
+    "items": [
+      {
+        "quote": "Josbin's ability to diagnose complex production issues under pressure is exceptional. He turned a critical P1 incident into a comprehensive solution that improved our entire architecture.",
+        "name": "Engineering Manager",
+        "title": "Fortune 500 Client",
+        "type": "Manager"
+      },
+      {
+        "quote": "The depth of knowledge Josbin brings to every interaction is remarkable. His case studies and documentation have become reference material for our entire support organization.",
+        "name": "Senior Director",
+        "title": "Enterprise Technology",
+        "type": "Peer"
+      },
+      {
+        "quote": "Working with Josbin on our Kubernetes migration was a game-changer. His technical expertise combined with clear communication made the entire process smooth and successful.",
+        "name": "Solutions Architect",
+        "title": "Cloud Partner",
+        "type": "Customer"
+      },
+      {
+        "quote": "Josbin doesn't just fix problems — he prevents them. His proactive approach to performance optimization saved us countless hours of downtime.",
+        "name": "VP of Engineering",
+        "title": "Technology Company",
+        "type": "Customer"
+      }
+    ],
+    "contactEmail": "josbinjoseph05@gmail.com",
+    "linkedinUrl": "https://www.linkedin.com/in/josbin-joseph-188293107/"
+  },
+  "settings": {
+    "siteTitle": "Josbin Joseph ",
+    "siteDescription": "Portfolio of Josbin Joseph",
+    "contactEmail": "josbinjoseph05@gmail.com",
+    "githubUrl": "https://github.com",
+    "linkedinUrl": "https://www.linkedin.com/in/josbin-joseph-188293107/",
+    "footerLogoText": "J",
+    "footerDescription": "Technical Support Engineer specializing in Cloud, Data, Kubernetes, and Data Virtualization. Building solutions that make a difference."
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Josbin Joseph",
+    "roles": [
+      "Technical Support Engineer"
+    ],
+    "description": "",
+    "resumeUrl": "/resume.pdf"
+  },
+  "testimonials": {
+    "showTestimonials": false,
+    "items": [
+      {
+        "quote": "Josbin's ability to diagnose complex production issues under pressure is exceptional. He turned a critical P1 incident into a comprehensive solution that improved our entire architecture.",
+        "name": "Engineering Manager",
+        "title": "Fortune 500 Client",
+        "type": "Manager"
+      },
+      {
+        "quote": "The depth of knowledge Josbin brings to every interaction is remarkable. His case studies and documentation have become reference material for our entire support organization.",
+        "name": "Senior Director",
+        "title": "Enterprise Technology",
+        "type": "Peer"
+      },
+      {
+        "quote": "Working with Josbin on our Kubernetes migration was a game-changer. His technical expertise combined with clear communication made the entire process smooth and successful.",
+        "name": "Solutions Architect",
+        "title": "Cloud Partner",
+        "type": "Customer"
+      },
+      {
+        "quote": "Josbin doesn't just fix problems — he prevents them. His proactive approach to performance optimization saved us countless hours of downtime.",
+        "name": "VP of Engineering",
+        "title": "Technology Company",
+        "type": "Customer"
+      }
+    ]
+  },
+  "about": {
+    "title": "Building the future of",
+    "titleHighlight": "enterprise support",
+    "story": "I am a Dynamic Cloud Professional...",
+    "stats": [
+      {
+        "value": 4,
+        "suffix": "+",
+        "label": "Years of Experience"
+      },
+      {
+        "value": 3,
+        "suffix": "+",
+        "label": "Cloud Platforms"
+      },
+      {
+        "value": 5,
+        "suffix": "+",
+        "label": "Certifications"
+      }
+    ],
+    "highlights": [
+      "Expertise in container orchestration and cloud automation"
+    ],
+    "timeline": [
+      {
+        "year": "2024",
+        "title": "Technical Support Professional - IBM",
+        "description": "Advanced technical support for Data Virtualization on CP4D and BigSQL."
+      },
+      {
+        "year": "2022",
+        "title": "Research Associate - Cloud That Technologies",
+        "description": "Engineered automated CI/CD pipelines and multi-cloud resource discovery engines."
+      },
+      {
+        "year": "2022",
+        "title": "Master of Computer Applications",
+        "description": "Graduated with MCA from Kristu Jayanti College."
+      },
+      {
+        "year": "2019",
+        "title": "Bachelor of Computer Applications",
+        "description": "Graduated with BCA from Kristu Jayanti College."
+      }
+    ]
+  }
+}
