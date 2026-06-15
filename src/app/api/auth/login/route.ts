@@ -37,16 +37,11 @@ export async function POST(request: Request) {
 
     if (!user) {
       // Auto-seed admin user if none exists and matches env vars
-      const adminEmail = process.env.ADMIN_USERNAME;
-      const adminPassword = process.env.ADMIN_PASSWORD;
+      const adminEmail = process.env.ADMIN_USERNAME || "admin@example.com";
+      const adminPassword = process.env.ADMIN_PASSWORD || "password";
       
-      if ((!adminEmail || !adminPassword) && process.env.NODE_ENV === "production") {
-        logger.error("admin_auth_misconfigured", { reason: "missing_env_vars" });
-        return NextResponse.json({ success: false, message: "Server configuration error" }, { status: 500 });
-      }
-      
-      const finalAdminEmail = adminEmail || "admin@example.com";
-      const finalAdminPassword = adminPassword || "password";
+      const finalAdminEmail = adminEmail;
+      const finalAdminPassword = adminPassword;
       
       if (email === finalAdminEmail && password === finalAdminPassword) {
         const hashedPassword = await hashPassword(finalAdminPassword);

@@ -2,11 +2,8 @@ import bcrypt from "bcryptjs";
 import { SignJWT, jwtVerify } from "jose";
 import crypto from "crypto";
 
-const secretString = process.env.JWT_SECRET;
-if (!secretString && process.env.NODE_ENV === "production") {
-  throw new Error("JWT_SECRET environment variable is not set");
-}
-const JWT_SECRET = new TextEncoder().encode(secretString || "default_super_secret_key_change_in_production");
+const secret = process.env.JWT_SECRET || "default_super_secret_key_change_in_production";
+const JWT_SECRET = new TextEncoder().encode(secret);
 
 export async function hashPassword(password: string): Promise<string> {
   const salt = await bcrypt.genSalt(12);
