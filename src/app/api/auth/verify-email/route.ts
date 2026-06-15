@@ -19,7 +19,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: false, message: "Token has expired" }, { status: 400 });
     }
 
-    const updatedUser = { ...user, IsVerified: true };
+    const updatedUser: Record<string, any> = { ...user, IsVerified: true };
     delete updatedUser.VerificationToken;
     delete updatedUser.VerificationTokenExpires;
 

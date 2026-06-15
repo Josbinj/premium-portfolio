@@ -32,7 +32,7 @@ export async function POST(request: Request) {
     const newPasswordHash = await hashPassword(newPassword);
 
     // Update user
-    const updatedUser = { ...user, PasswordHash: newPasswordHash };
+    const updatedUser: Record<string, any> = { ...user, PasswordHash: newPasswordHash };
     delete updatedUser.ResetToken;
     delete updatedUser.ResetTokenExpires;
 
