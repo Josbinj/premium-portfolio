@@ -1,14 +1,33 @@
+import { dynamoDb, getTableName } from "@/lib/db/dynamo";
+import { GetCommand } from "@aws-sdk/lib-dynamodb";
+
 const IS_DEV = process.env.NODE_ENV === "development";
-const API_BASE_URL = IS_DEV ? "http://localhost:3000/api" : (process.env.NEXT_PUBLIC_API_URL || "https://gqi8w89tse.execute-api.us-east-1.amazonaws.com/prod/api");
+// We default to a relative path for client-side fetching. Server-side will bypass fetch.
+const API_BASE_URL = IS_DEV ? "http://localhost:3000/api" : "/api";
 
 export async function fetchSectionData(sectionId: string) {
+  if (typeof window === "undefined") {
+    // SERVER-SIDE: Bypass API route and query DynamoDB directly
+    try {
+      const { Item } = await dynamoDb.send(new GetCommand({
+        TableName: getTableName("portfolio-data"),
+        Key: { SectionId: sectionId }
+      }));
+      return Item || null;
+    } catch (error) {
+      console.warn(`Direct DB fetch error for ${sectionId}:`, error);
+      return null; // Return null instead of crashing the page
+    }
+  }
+
+  // CLIENT-SIDE: Fallback to API route
   try {
     const res = await fetch(`${API_BASE_URL}/portfolio/${sectionId}`, {
-      cache: 'no-store', // Always fetch fresh data to reflect admin edits immediately
+      cache: 'no-store',
     });
     
     if (!res.ok) {
-      if (res.status === 404) return null; // Not found yet, use default
+      if (res.status === 404) return null;
       throw new Error(`Failed to fetch section ${sectionId}: ${res.statusText}`);
     }
     
