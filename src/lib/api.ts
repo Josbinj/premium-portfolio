@@ -9,9 +9,13 @@ export async function fetchSectionData(sectionId: string) {
   if (typeof window === "undefined") {
     // SERVER-SIDE: Bypass API route and query DynamoDB directly
     try {
+      const ownerEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL || process.env.ADMIN_USERNAME || "admin@example.com";
       const { Item } = await dynamoDb.send(new GetCommand({
-        TableName: getTableName("portfolio-data"),
-        Key: { SectionId: sectionId }
+        TableName: getTableName("data"),
+        Key: { 
+          OwnerEmail: ownerEmail,
+          SectionID: sectionId 
+        }
       }));
       return Item || null;
     } catch (error) {
