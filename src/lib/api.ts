@@ -17,7 +17,10 @@ export async function fetchSectionData(sectionId: string) {
           SectionID: sectionId 
         }
       }));
-      return Item || null;
+      if (Item && Item.Data) {
+        return { data: Item.Data };
+      }
+      return null;
     } catch (error) {
       console.warn(`Direct DB fetch error for ${sectionId}:`, error);
       return null; // Return null instead of crashing the page
